@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">3.1. start_activity_for_result</string>
+    <string name="to_second">to second</string>
+    <string name="to_first">to first</string>
+    <string name="to_third">to third</string>
+    <string name="to_about">to About</string>
+</resources>

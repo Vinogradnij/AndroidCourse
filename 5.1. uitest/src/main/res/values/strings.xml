@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">5.1. uitest</string>
+    <string name="before_click">before click</string>
+    <string name="after_click">after click</string>
+</resources>

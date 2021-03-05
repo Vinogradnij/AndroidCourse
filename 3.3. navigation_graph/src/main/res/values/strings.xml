@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">3.3. navigation_graph</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="to_second">to second</string>
+    <string name="to_first">to first</string>
+    <string name="to_third">to third</string>
+    <string name="to_about">to About</string>
+</resources>
