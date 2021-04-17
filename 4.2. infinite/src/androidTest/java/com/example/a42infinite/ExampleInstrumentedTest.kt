@@ -1,12 +1,17 @@
 package com.example.a42infinite
 
-import androidx.test.platform.app.InstrumentationRegistry
+import android.content.pm.ActivityInfo
+import androidx.test.espresso.Espresso
+import androidx.test.espresso.assertion.ViewAssertions
+import androidx.test.espresso.matcher.ViewMatchers
 import androidx.test.ext.junit.runners.AndroidJUnit4
+import androidx.test.rule.ActivityTestRule
+import com.example.a42infinite.CustomMatchers.Companion.withItemCountInfinite
 
 import org.junit.Test
 import org.junit.runner.RunWith
 
-import org.junit.Assert.*
+import org.junit.Rule
 
 /**
  * Instrumented test, which will execute on an Android device.
@@ -14,11 +19,15 @@ import org.junit.Assert.*
  * See [testing documentation](http://d.android.com/tools/testing).
  */
 @RunWith(AndroidJUnit4::class)
-class ExampleInstrumentedTest {
+class RecyclerViewTest {
+    private val itemsCount = 288
+    @get:Rule
+    val mainRule = ActivityTestRule<MainActivity>(MainActivity::class.java)
+
     @Test
-    fun useAppContext() {
-        // Context of the app under test.
-        val appContext = InstrumentationRegistry.getInstrumentation().targetContext
-        assertEquals("com.example.a42infinite", appContext.packageName)
+    fun countItems() {
+        mainRule.activity.requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_PORTRAIT
+        Espresso.onView(ViewMatchers.withId(R.id.recycler_view))
+            .check(ViewAssertions.matches(withItemCountInfinite(itemsCount)))
     }
 }
